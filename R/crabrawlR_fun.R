@@ -180,8 +180,8 @@ getunique = function(df, r_yes, r_no) {
 
 getmissing = function(pmatrix, taxlist_yes, genefamily_list) {
   if(length(genefamily_list == 1)) {
-    taxnames = rownames(pangenome_clean[taxlistMesoAO$r_yes,])
-    whichzero = which(pangenome_clean[taxlistMesoAO$r_yes,uniqueMesoAO$yes_soft] == 0)
+    taxnames = rownames(pangenome_clean[taxlist_yes,])
+    whichzero = which(pangenome_clean[taxlist_yes,genefamily_list] == 0)
     taxmissname = taxnames[whichzero]
     newDF = data.frame(genefam=names(genefamily_list),
                        taxmissing=taxmissname,
